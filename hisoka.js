@@ -1318,13 +1318,13 @@ break
            if (/image/.test(mime)) {
            m.reply(mess.wait)
                 let media = await hisoka.downloadMediaMessage(qmsg)
-                let encmedia = await hisoka.sendImageAs(m.chat, media, m, { packname: '𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒃𝒚', author: @ {pushname} })
+                let encmedia = await hisoka.sendImageAs(m.chat, media, m, { packname: '𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒃𝒚', author: {pushname} })
                 await fs.unlinkSync(encmedia)
             } else if (/video/.test(mime)) {
             m.reply(mess.wait)
                 if (qmsg.seconds > 11) return m.reply('Maksimal 10 detik!')
                 let media = await hisoka.downloadMediaMessage(qmsg)
-                let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: '𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒃𝒚', author: @ {pushname} })
+                let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: '𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒃𝒚', author: {pushname} })
                 await fs.unlinkSync(encmedia)
             } else {
                 m.reply(`Kirim/reply gambar/video/gif dengan caption ${prefix + command}\nDurasi Video/Gif 1-9 Detik`)
