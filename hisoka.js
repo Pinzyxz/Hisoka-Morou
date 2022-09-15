@@ -1314,22 +1314,19 @@ break
                     hisoka.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
-            case 'sticker': case 's': case 'gif': case 'sgif': {
-           if (/image/.test(mime)) {
-           m.reply(mess.wait)
-                let media = await hisoka.downloadMediaMessage(qmsg)
-                let encmedia = await hisoka.sendImageAs(m.chat, media, m, { packname: '𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒃𝒚', author: {pushname} })
-                await fs.unlinkSync(encmedia)
-            } else if (/video/.test(mime)) {
-            m.reply(mess.wait)
-                if (qmsg.seconds > 11) return m.reply('Maksimal 10 detik!')
-                let media = await hisoka.downloadMediaMessage(qmsg)
-                let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: '𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒃𝒚', author: {pushname} })
-                await fs.unlinkSync(encmedia)
-            } else {
-                m.reply(`Kirim/reply gambar/video/gif dengan caption ${prefix + command}\nDurasi Video/Gif 1-9 Detik`)
-                }
-            }
+            case 'sticker': case 's': case 'stickergif': case 'sgif': {
+let media = await quoted.download()
+let encmedia = await hisoka.sendImageAsSticker(m.chat, media, m, { packname: "", author: `${botname}` })
+await fs.unlinkSync(encmedia)
+} else if (/video/.test(mime)) {
+if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
+let media = await quoted.download()
+let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: `${pushname}`, author: `${global.botname}` })
+await fs.unlinkSync(encmedia)
+} else {
+m.reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
+}
+}
             break
             case 'stickerwm': case 'swm': case 'stickergifwm': case 'sgifwm': {
                 let [teks1, teks2] = text.split`|`
