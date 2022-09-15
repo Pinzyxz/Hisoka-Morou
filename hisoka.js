@@ -158,7 +158,7 @@ key: {
 						"mimetype": "image/jpeg",
 						"jpegThumbnail": fs.readFileSync('./lib/hisoka.jpg') //Gambarnye
 					},
-					"title": ${pushname}
+					"title": "hiii",
 					"description": "Plinnzbot", 
 					"currencyCode": "USD",
 					"priceAmount1000": "2000",
