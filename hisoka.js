@@ -1325,7 +1325,7 @@ await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 Seconds!')
 let media = await quoted.download()
-let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: "", author: `Piiww` })
+let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: "", author: `Vell's Mineee <3` })
 await fs.unlinkSync(encmedia)
 } else {
 m.reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
