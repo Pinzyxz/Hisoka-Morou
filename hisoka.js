@@ -114,6 +114,22 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
+         fgclink = {
+	"key": {
+		"fromMe": false,
+		"participant": "0@s.whatsapp.net",
+		"remoteJid": "0@s.whatsapp.net"
+	},
+	"message": {
+		"groupInviteMessage": {
+			"groupJid": "120363025138339333@g.us",
+			"inviteCode": "mememteeeekkeke",
+			"groupName": "Mengter", 
+            "caption": "Halo bang jagoo", 
+            'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')
+		}
+	}
+}
          fvideo = {
 	 key: { 
           fromMe: false,
