@@ -114,14 +114,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
-        fliveLoc = {
-	 key:
-	 { fromMe: false,
-	 participant: `0@s.whatsapp.net`, ...(m.chat  ? 
-	 { remoteJid: "status@broadcast" } : {}) },
-	 message: { "liveLocationMessage": { "caption":'MarkJembut',"h": `aloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
-	}
- ftoko = {
+        ftoko = {
 key: {
 			fromMe: false,
 			participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "0@s.whatsapp.net" } : {})
@@ -133,7 +126,7 @@ key: {
 						"mimetype": "image/jpeg",
 						"jpegThumbnail": fs.readFileSync('./lib/hisoka.jpg') //Gambarnye
 					},
-					"title": "Piiw",
+					"title": "Sabo",
 					"description": "Plinnzbot", 
 					"currencyCode": "USD",
 					"priceAmount1000": "2000",
@@ -144,6 +137,14 @@ key: {
 		}
 	}
 }
+        fliveLoc = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat  ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "liveLocationMessage": { "caption":'yah',"h": `aloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
+	}
+	
 	    
         // Public & Self
         if (!hisoka.public) {
@@ -234,7 +235,7 @@ Jawablah Pertanyaan Berikut :\n${room.soal}\n\n\nTerdapat ${room.jawaban.length}
 ${isWin ? `Semua Jawaban Terjawab` : isSurender ? 'Menyerah!' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
         return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
-    }).filter(v => v).('\n')}
+    }).filter(v => v).join('\n')}
     ${isSurender ? '' : `Perfect Player`}`.trim()
             hisoka.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }}).then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
             if (isWin || isSurender) delete _family100['family100'+m.chat]
@@ -361,8 +362,8 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 	    let winner = isSurrender ? room.game.currentTurn : room.game.winner
 	    let str = `Room ID: ${room.id}
 
-${arr.slice(0, 3).('')}
-${arr.slice(3, 6).('')}
+${arr.slice(0, 3).join('')}
+${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
 ${isWin ? `@${winner.split('@')[0]} Menang!` : isTie ? `Game berakhir` : `Giliran ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
@@ -2107,7 +2108,7 @@ break
             caption: `Done!`,
             buttons: [{buttonId: `tiktokmp3 ${text}`, buttonText: { disText: "Audio" }, type: 1 }],
             footer: "To Change To Audio Use Manual #tiktokaudio [link]"
-            }, { quoted: ftoko })
+            }, { quoted: m })
 
             })
 
