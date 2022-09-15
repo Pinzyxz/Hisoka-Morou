@@ -1616,7 +1616,7 @@ break
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftoko })
             }
             break
 	    case 'ytmp3': case 'ytaudio': {
