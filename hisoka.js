@@ -19,6 +19,7 @@ const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
+const bochil = require('@bochilteam/scraper')
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins } = require('./lib/myfunc')
 
 // read database
@@ -2067,22 +2068,19 @@ break
                 }
             }
             break
-	        case 'tiktok': case 'tiktoknowm': {
-                if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result.nowatermark },
-                    caption: `Download From ${text}`,
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 5
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+	        case 'tiktok': case 'tt': case 'tiktoknowm':{
+            if (!text) throw 'Masukkan Query Link!'
+            m.reply(mess.wait)
+            bochil.tiktokdlv3(text).then( data => {
+            hisoka.sendMessage(m.chat, {
+            video: { url: data.video.no_watermark },
+            caption: `Done!`,
+            buttons: [{buttonId: `tiktokmp3 ${text}`, buttonText: { disText: "Audio" }, type: 1 }],
+            footer: "To Change To Audio Use Manual #tiktokaudio [link]"
+            }, { quoted: m })
+
+            })
+
             }
             break
             case 'tiktokwm': case 'tiktokwatermark': {
