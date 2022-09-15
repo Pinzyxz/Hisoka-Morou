@@ -117,8 +117,8 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
          fgclink = {
 	"key": {
 		"fromMe": false,
-		"participant": "0@s.whatsapp.net",
-		"remoteJid": "group@broadcast"
+		"participant": "6285870054532@s.whatsapp.net",
+		"remoteJid": "status@broadcast"
 	},
 	"message": {
 		"groupInviteMessage": {
