@@ -125,7 +125,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 			"groupJid": "120363025138339333@g.us",
 			"inviteCode": "mememteeeekkeke",
 			"groupName": "Mengter", 
-            "caption": {groupMetadata.subject}, 
+            "caption": "wangsafbot-MD", 
           'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')
 		}
 	}
