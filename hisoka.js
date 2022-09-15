@@ -138,10 +138,10 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
                 },
 	 message: { 
                  "videoMessage": { 
-                 "title":'hai kak'{pushname},
+                 "title":"hai tod",
                  "h": `Hmm`,
                  'seconds': '99999', 
-                 'caption': 'Halo bang',
+                 'caption': 'bokep thomas vs unta arab',
                  'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')
                         }
                        }
