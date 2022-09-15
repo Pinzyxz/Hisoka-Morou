@@ -118,7 +118,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 	"key": {
 		"fromMe": false,
 		"participant": "0@s.whatsapp.net",
-		"remoteJid": "status@broadcast"
+		"remoteJid": "grup@broadcast"
 	},
 	"message": {
 		"groupInviteMessage": {
@@ -158,7 +158,7 @@ key: {
 						"mimetype": "image/jpeg",
 						"jpegThumbnail": fs.readFileSync('./lib/hisoka.jpg') //Gambarnye
 					},
-					"title": "Sabo",
+					"title": ${pushname}
 					"description": "Plinnzbot", 
 					"currencyCode": "USD",
 					"priceAmount1000": "2000",
