@@ -119,7 +119,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 	 { fromMe: false,
 	 participant: `0@s.whatsapp.net`, ...(m.chat  ? 
 	 { remoteJid: "status@broadcast" } : {}) },
-	 message: { "liveLocationMessage": { "caption":"ANTIBOT","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
+	 message: { "liveLocationMessage": { "caption":'MarkJembut',"h": `aloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
 	}
 	    
         // Public & Self
