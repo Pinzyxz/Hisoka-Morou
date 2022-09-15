@@ -1315,19 +1315,22 @@ break
              }
              break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
+if (!quoted) return reply(`Reply Video/Image With Caption ${prefix + command}`)
+if (/image/.test(mime)) {
+m.reply(mess.wait)      
 let media = await quoted.download()
-let encmedia = await hisoka.sendImageAsSticker(m.chat, media, m, { packname: "", author: `${botname}` })
+let encmedia = await hisoka.sendImageAsSticker(m.chat, media, m, { packname: `{pushname}`, author: `` })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
+if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 Seconds!')
 let media = await quoted.download()
-let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: `${pushname}`, author: `` })
+let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: `{pushname}`, author: `` })
 await fs.unlinkSync(encmedia)
 } else {
 m.reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
 }
 }
-            break
+break
             case 'stickerwm': case 'swm': case 'stickergifwm': case 'sgifwm': {
                 let [teks1, teks2] = text.split`|`
                 if (!teks1) throw `Kirim/reply image/video dengan caption ${prefix + command} teks1|teks2`
