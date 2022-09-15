@@ -138,7 +138,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
                 },
 	 message: { 
                  "videoMessage": { 
-                 "title":"hallo bang",
+                 "title":'hai kak'{pushname},
                  "h": `Hmm`,
                  'seconds': '99999', 
                  'caption': 'Halo bang',
