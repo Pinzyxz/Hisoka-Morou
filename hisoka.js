@@ -114,6 +114,13 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
+         fliveLoc = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat  ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "liveLocationMessage": { "caption":"ANTIBOT","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
+	}
 	    
         // Public & Self
         if (!hisoka.public) {
@@ -1320,12 +1327,12 @@ if (!quoted) return reply(`Reply Video/Image With Caption ${prefix + command}`)
 if (/image/.test(mime)) {
 m.reply(mess.wait)      
 let media = await quoted.download()
-let encmedia = await hisoka.sendImageAsSticker(m.chat, media, m, { packname: "", author: `Vell's Mineee <3` })
+let encmedia = await hisoka.sendImageAsSticker(m.chat, media, fliveloc, { packname: "", author: `Vell's Mineee <3` })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 Seconds!')
 let media = await quoted.download()
-let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: "", author: `Vell's Mineee <3` })
+let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, fliveloc, { packname: "", author: `Vell's Mineee <3` })
 await fs.unlinkSync(encmedia)
 } else {
 m.reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
