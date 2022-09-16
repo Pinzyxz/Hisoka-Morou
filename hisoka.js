@@ -1510,7 +1510,7 @@ break
 		        let { webp2mp4File } = require('./lib/uploader')
                 let media = await hisoka.downloadAndSaveMediaMessage(qmsg)
                 let webpToMp4 = await webp2mp4File(media)
-                await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: m })
+                await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: bugcon })
                 await fs.unlinkSync(media)
             }
             break
