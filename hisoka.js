@@ -114,6 +114,13 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
+         fcon = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "contactMessage": { "title":"","h": `haloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
+	}
          fcona = {
 	 key:
 	 { fromMe: false,
