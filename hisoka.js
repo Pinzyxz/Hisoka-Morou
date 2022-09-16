@@ -114,6 +114,13 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
+        const fcona = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "contactsArrayMessage": { "title":"dontol","d": `aloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
+	}
          fgclink = {
 	"key": {
 		"fromMe": false,
@@ -141,7 +148,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
                  "title":"hai tod",
                  "h": `Hmm`,
                  'seconds': '99999', 
-                 'caption': 'bokep thomas vs unta arab',
+                 'caption': '""',
                  'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')
                         }
                        }
@@ -1267,7 +1274,7 @@ break
                             }, {
                                 callButton: {
                                     displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 882-9202-4190'
+                                    phoneNumber: '+62 858-7005-4532'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -1306,7 +1313,7 @@ break
                             }, {
                                 callButton: {
                                     displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 882-9202-4190'
+                                    phoneNumber: '+62 858-7005-4532'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -3168,7 +3175,7 @@ let capt = `⭔ Title: ${judul}
                             }, {
                                 callButton: {
                                     displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 882-9202-4190'
+                                    phoneNumber: '+62 858-7005-4532'
                                 }
                             }, {
                                 quickReplyButton: {
