@@ -114,6 +114,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
+         bugcon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) }, message: { "contactMessage": { "vcard": ""}}}
          fcon = {
 	 key:
 	 { fromMe: false,
